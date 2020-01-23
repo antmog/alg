@@ -25,6 +25,16 @@ public class CustomArray {
         return arr.length;
     }
 
+    public void printState() {
+        boolean result = true;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                result = false;
+            }
+        }
+        System.out.println("Sorted: " + result);
+    }
+
     public void print() {
         System.out.println(Arrays.toString(arr));
     }
