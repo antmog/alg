@@ -10,8 +10,8 @@ public class Insert {
 
     // TODO: 23.01.2020 maybe make pictures
     // Take X element and save it to TEMP.
-    // Compare to the last element of sorted part, if its more -> skip while, else
-    // put element on place of previous element of comparison, decrease index
+    // Compare X to the last element of sorted part, if X is more -> skip while, else
+    // put X element on place of element of comparison, decrease index
     // Compare... , else
     // put element on place of previous element of comparison, decrease index
     // ... in the end put TEMP to the place which became free after array move

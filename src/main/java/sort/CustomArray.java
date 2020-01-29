@@ -17,6 +17,11 @@ public class CustomArray {
         arr = generateRandomArray(size);
     }
 
+    public CustomArray(CustomArray customArray) {
+        long[] arr = customArray.arr;
+        this.arr = arr == null ? null : (long[]) SerializationUtils.deserialize(SerializationUtils.serialize(arr));
+    }
+
     public void generateNewArray(int size) {
         arr = generateRandomArray(size);
     }
@@ -26,13 +31,17 @@ public class CustomArray {
     }
 
     public void printState() {
+        System.out.println("Sorted: " + isSorted());
+    }
+
+    public boolean isSorted() {
         boolean result = true;
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] > arr[i + 1]) {
                 result = false;
             }
         }
-        System.out.println("Sorted: " + result);
+        return result;
     }
 
     public void print() {
@@ -41,5 +50,10 @@ public class CustomArray {
 
     public void sortWith(Function<long[], long[]> sorting) {
         arr = sorting.apply(arr);
+    }
+
+    // TODO: 29.01.2020 implement (page 119)
+    public long getMedian() {
+        return 0;
     }
 }
